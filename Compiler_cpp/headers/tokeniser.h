@@ -1,23 +1,35 @@
 #include <iostream>
-#include <vector>
 namespace tknzr
 {
-    
+    enum tokentype
+    {
+        KEYWORD,
+        IDENTIFIER,
+        OPERATOR,
+        CONSTANT,
+        STRING_CONSTANT,
+        DITTO_START,
+        DITTO_END,
+        APOSTROPHE_START,
+        APOSTROPHE_END
+    };
+    enum datatype
+    {
+        MOPL_INT,
+        MOPL_FLOAT,
+        MOPL_CHAR
+    };
+
     struct token
     {
         std::string data;
-        tokentype type;
+        enum tokentype type;
     };
     struct identifier
     {
         std::string name;
-        datatype type;
+        enum datatype type;
     };
-
-    enum tokentype {KEYWORD, IDENTIFIER, OPERATOR, CONSTANT};
-    enum datatype {MOPL_INT, MOPL_FLOAT, MOPL_CHAR};
-    std::vector<std::string> keywordlist = {"if", "else"};
-
 
     void tokenize(std::string filecontent);
 }

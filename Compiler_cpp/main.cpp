@@ -7,6 +7,6 @@ int main()
 {
     std::string* filecontent;
     filecontent = cmplr_fileio::readsrcf("test.mop");
-    tknsr::tokenise(*filecontent);
+    tknzr::tokenize(*filecontent);
     return 0;
 }
